@@ -2,7 +2,7 @@
 """
 Author : Ryan Alcoran <r.alcoran>
 Date   : 2020-11-15
-Purpose: Rock the Casbah
+Purpose: Crow's Nest
 """
 
 import argparse
@@ -22,27 +22,13 @@ def get_args():
     return parser.parse_args()
 
 # --------------------------------------------------
-def is_vowel(char):
-    """Check if character is a vowel"""
-
-    ch = char.lower()
-    if(ch=='a' or ch=='e' or ch=='i' or ch=='o' or ch=='u'):
-        return True
-    else:
-        return False
-
-# --------------------------------------------------
 def main():
     """Make a jazz noise here"""
 
     args = get_args()
     word = args.word
-    article = ''
-    if (is_vowel(word[0]) == True):
-        article = 'an '
-    else:
-        article = 'a '
-    print('Ahoy, Captain, '+ article + word + ' off the larboard bow!')
+    article = 'an' if word[0].lower() in 'aeiou' else 'a'
+    print(f'Ahoy, Captain, {article} {word} off the larboard bow!')
 
 # --------------------------------------------------
 if __name__ == '__main__':
