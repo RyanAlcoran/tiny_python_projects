@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+ #!/usr/bin/env python3
 """tests for crowsnest.py"""
 
 import os
@@ -47,7 +47,7 @@ def test_consonant_upper():
 
     for word in consonant_words:
         out = getoutput(f'{prg} {word.title()}')
-        assert out.strip() == template.format('a', word.title())
+        assert out.strip() == template.format('A', word.title())
 
 
 # --------------------------------------------------
@@ -64,5 +64,5 @@ def test_vowel_upper():
     """octopus -> an Octopus"""
 
     for word in vowel_words:
-        out = getoutput(f'{prg} {word.upper()}')
-        assert out.strip() == template.format('an', word.upper())
+        out = getoutput(f'{prg} {word.title()}')
+        assert out.strip() == template.format('An', word.title())

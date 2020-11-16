@@ -27,7 +27,15 @@ def main():
 
     args = get_args()
     word = args.word
-    article = 'an' if word[0].lower() in 'aeiou' else 'a'
+
+    """Original solution"""
+    #article = 'an' if word[0].lower() in 'aeiou' else 'a'
+
+    if word[0].islower():
+        article = 'an' if word[0] in 'aeiou' else 'a'
+    else:
+        article = 'An' if word[0] in 'AEIOU' else 'A'
+
     print(f'Ahoy, Captain, {article} {word} off the larboard bow!')
 
 # --------------------------------------------------
