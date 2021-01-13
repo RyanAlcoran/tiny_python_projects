@@ -26,6 +26,11 @@ def get_args():
                         help='Sort the items',
                         action='store_true')
 
+    parser.add_argument('-o',
+                        '--oxford',
+                        help='Disable Oxford comma',
+                        action='store_true')
+
     return parser.parse_args()
 
 
@@ -35,6 +40,7 @@ def main():
 
     args = get_args()
     length = len(args.item)
+    oxford = args.oxford
     if args.sorted:
         items = sorted(args.item)
     else:
@@ -44,7 +50,10 @@ def main():
         items.insert(-1, 'and')
     
     if length > 2:
-        print(f"You are bringing {', '.join(items[:-1])} {items[-1]}.") 
+        if oxford:
+            print(f"You are bringing {', '.join(items[:-2])} {' '.join(items[-2:])}.")
+        else:
+            print(f"You are bringing {', '.join(items[:-1])} {items[-1]}.") 
     else:
         print(f"You are bringing {' '.join(items)}.")
 

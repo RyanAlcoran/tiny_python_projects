@@ -66,3 +66,24 @@ def test_more_than_two_sorted():
     out = getoutput(f'{prg} {arg} --sorted')
     expected = ('You are bringing apples, bananas, cherries, and dates.')
     assert out.strip() == expected
+
+
+# --------------------------------------------------
+def test_more_than_two_no_oxford():
+    """more than two items with no oxford comma"""
+
+    arg = '"potato chips" coleslaw cupcakes "French silk pie"'
+    out = getoutput(f'{prg} {arg} --oxford')
+    expected = ('You are bringing potato chips, coleslaw, '
+                'cupcakes and French silk pie.')
+    assert out.strip() == expected
+
+
+# --------------------------------------------------
+def test_more_than_two_sorted_no_oxford():
+    """more than two items sorted output with no oxford comma"""
+
+    arg = 'bananas apples dates cherries'
+    out = getoutput(f'{prg} {arg} --sorted --oxford')
+    expected = ('You are bringing apples, bananas, cherries and dates.')
+    assert out.strip() == expected
