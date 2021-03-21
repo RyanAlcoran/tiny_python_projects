@@ -65,7 +65,7 @@ def test_for_echo():
     txt = open(now).read().rstrip()
     rv, out = getstatusoutput(f'{prg} -m 0 "{txt}"')
     assert rv == 0
-    assert out.rstrip() == f'You said: "{txt}"\nI heard : "{txt}"'
+    assert out.rstrip() == f'You said: "{txt}"\nI heard: "{txt}"'
 
 
 # --------------------------------------------------
@@ -78,7 +78,7 @@ def test_now_cmd_s1():
     expected = """
     Now is Ege time [dr all good me- to come to the jid of the party.
     """.strip()
-    assert out.rstrip() == f'You said: "{txt}"\nI heard : "{expected}"'
+    assert out.rstrip() == f'You said: "{txt}"\nI heard: "{expected}"'
 
 
 # --------------------------------------------------
@@ -91,7 +91,7 @@ def test_now_cmd_s2_m4():
     expected = """
     No$ i% khefMiIe sor@all$glo<BmenYts cAAeltaTtheSaid[HYnthe Aalty.
     """.strip()
-    assert out.rstrip() == f'You said: "{txt}"\nI heard : "{expected}"'
+    assert out.rstrip() == f'You said: "{txt}"\nI heard: "{expected}"'
 
 
 # --------------------------------------------------
@@ -102,7 +102,7 @@ def test_fox_file_s1():
     assert rv == 0
     txt = open(fox).read().rstrip()
     expected = "The duic: brown hox jumps over the lkzy dog."
-    assert out.rstrip() == f'You said: "{txt}"\nI heard : "{expected}"'
+    assert out.rstrip() == f'You said: "{txt}"\nI heard: "{expected}"'
 
 
 # --------------------------------------------------
@@ -113,7 +113,7 @@ def test_fox_file_s2_m6():
     assert rv == 0
     txt = open(fox).read().rstrip()
     expected = "ZoA@qric` HwdTB Alx$jumIslolXs th^Yl?dy<YoA."
-    assert out.rstrip() == f'You said: "{txt}"\nI heard : "{expected}"'
+    assert out.rstrip() == f'You said: "{txt}"\nI heard: "{expected}"'
 
 
 # --------------------------------------------------
