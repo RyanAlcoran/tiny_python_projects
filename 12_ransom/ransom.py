@@ -43,12 +43,15 @@ def main():
 
     args = get_args()
     random.seed(args.seed)
+    """
+    # For Loop
     output = ''
     for char in args.text:
         output += choose(char)
     print(output)
-    
-
+    """
+    #List Comprehension
+    print(''.join([choose(char) for char in args.text]))
 
 # --------------------------------------------------
 if __name__ == '__main__':
