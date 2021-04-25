@@ -49,9 +49,13 @@ def main():
     for char in args.text:
         output += choose(char)
     print(output)
-    """
-    #List Comprehension
+    
+    # List Comprehension
     print(''.join([choose(char) for char in args.text]))
+    """
+
+    # Map
+    print(''.join(map(choose, args.text)))
 
 # --------------------------------------------------
 if __name__ == '__main__':
